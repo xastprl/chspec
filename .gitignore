@@ -1,0 +1,4 @@
+tables/*fits
+*.so
+lmodel.dat
+pkgIndex.tcl
