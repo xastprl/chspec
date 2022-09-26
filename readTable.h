@@ -27,7 +27,7 @@
 #define maxstoredBins 5
 
 #define CHSPEC_TABLEPATH "/home/mithun/work/ch2/xsm/science/chspec/tables/"
-#define CHSPEC_TABLEFILE "chspec_CHIANTIv10.fits" 
+#define CHSPEC_TABLEFILE "chspec_CHIANTIv10.fits.gz" 
 
 int TABLE_READ_STATUS=0;
 

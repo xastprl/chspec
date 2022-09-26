@@ -1,4 +1,4 @@
-tables/*fits
+tables/*fits*
 *.so
 lmodel.dat
 pkgIndex.tcl

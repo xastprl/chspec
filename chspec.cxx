@@ -77,10 +77,19 @@ void chisoth(const RealArray& energyArray, const RealArray& parms,
 
     // Check if energy bins match previous stored ones
     int matchBinSpec=-1;
+    int enBinOffset=0;
+    
     for (int i=0;i<chfh.nBinSpec;i++)
     {
         if(nE==chfh.nEbin[i])
             matchBinSpec=i;
+        enBinOffset+=chfh.nEbin[i];
+    }
+
+    if((enBinOffset+nE)>E_n)
+    {
+        printf("chspec Error: Too many data sets together. Cannot store rebinned models together\n");
+        return;
     }
    
     if(matchBinSpec==-1) // Response energy bins are not same as previously stored ones
@@ -106,14 +115,14 @@ void chisoth(const RealArray& energyArray, const RealArray& parms,
         {
            printf("chspec Error: Lower bound of the energy response should be >= 100 eV or should be \
                     incremented as an integer multiple of 1 eV. ...Terminating the program.\n");
-            exit(0);
+           return;
         }
 
         // Rebin spectrum to required energy bins
 
         //printf("Lower bound %d\n",LowerBound_ind);
 
-        int enBinOffset=0;
+        enBinOffset=0;
         for (int i=0;i<chfh.nBinSpec;i++) enBinOffset+=chfh.nEbin[i];
 
         for (int i = 0; i < I_n; i++)
@@ -140,7 +149,7 @@ void chisoth(const RealArray& energyArray, const RealArray& parms,
 
     }
 
-    int enBinOffset=0;
+    enBinOffset=0;
     for (int i=0;i<matchBinSpec;i++) enBinOffset+=chfh.nEbin[i];
 
     //printf("%ld\t%d\t%d\t%d\n",nE,chfh.nBinSpec,matchBinSpec,enBinOffset,chfh.nEbin[matchBinSpec]);
@@ -197,12 +206,20 @@ void chgausdem(const RealArray& energyArray, const RealArray& parms,
 
     // Check if energy bins match previous stored ones
     int matchBinSpec=-1;
+    int enBinOffset=0;
+
     for (int i=0;i<chfh.nBinSpec;i++)
     {
         if(nE==chfh.nEbin[i])
             matchBinSpec=i;
+        enBinOffset+=chfh.nEbin[i];
     }
 
+    if((enBinOffset+nE)>E_n)
+    {
+        printf("chspec Error: Too many data sets together. Cannot store rebinned models together\n");
+        return;
+    }
 
     if(matchBinSpec==-1) // Response energy bins are not same as previously stored ones
     {
@@ -227,14 +244,14 @@ void chgausdem(const RealArray& energyArray, const RealArray& parms,
         {
  	       printf("chspec Error: Lower bound of the energy response should be >= 100 eV or should be \
                     incremented as an integer multiple of 1 eV. ...Terminating the program.\n");
-            exit(0);
+           return;
         } 
 
         // Rebin spectrum to required energy bins
 
         //printf("Lower bound %d\n",LowerBound_ind);
 
-        int enBinOffset=0;
+        enBinOffset=0;
         for (int i=0;i<chfh.nBinSpec;i++) enBinOffset+=chfh.nEbin[i];
 
         for (int i = 0; i < I_n; i++)
@@ -261,7 +278,7 @@ void chgausdem(const RealArray& energyArray, const RealArray& parms,
 
     }
 
-    int enBinOffset=0;
+    enBinOffset=0;
     for (int i=0;i<matchBinSpec;i++) enBinOffset+=chfh.nEbin[i];
 
     //for (en = 0; en < nE; en++) printf("%lf\n",chfh.allspecBinned[25][400][en]);
