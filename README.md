@@ -30,7 +30,7 @@ To install chspec package, run the install.sh script:
 ./install.sh
 ```
 
-This will first download the fits table file using wget and save in the directory chspec/tables. If you require proxy setting for download, edit the first line in the install.sh script. Then, the model will be compiled and installed  
+This will first download the fits table file using wget and save in the directory chspec/tables. Then, the model will be compiled and installed.  
 
 ## Usage
 
