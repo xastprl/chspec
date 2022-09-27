@@ -41,7 +41,7 @@ chspec package.
 ``` shell
 cd chspec
 ```
-Note: If you have not executed the init script for heasoft in your environment, it needs
+**Note**: If you have not executed the init script for heasoft in your environment, it needs
 to be done (usually by executing `heainit` if that alias is set).
 
 - To install chspec package, run the `install.sh` script:
