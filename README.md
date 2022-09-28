@@ -14,12 +14,15 @@ These models calculate the synthetic photon spectrum from a spectral library, ge
 by using the atomic database package [CHIANTI](https://www.chiantidatabase.org/). The
 pre-calculated spectra over grid of temperatures is stored in a FITS file.
 
-The isothermal model takes logarithm of the temperature (LogT), abundances (Ax) of the
+The isothermal model takes logarithm of the temperature in K (LogT), abundances (A<sub>x</sub>) of the
 elements with Z=2 to Z=30, and the volume emission measure as input parameters. The
 volume emission measure is implemented as a normalization factor, which is in the units
-of 10e46/cm3. For the gaussian DEM model, peak temperature and width of Gaussian (in
+of 10<sup>46</sup> cm<sup>-3</sup>. For the gaussian DEM model, peak temperature and width of Gaussian (in
 log) are input parameters in addition to the abundances. Normalization gives peak
-emission measure in units of 10e46/cm3.
+emission measure in units of 10<sup>46</sup> cm<sup>-3</sup>. The abundances A<sub>x</sub> 
+are in logarithmic units such that A<sub>x</sub> = 12+log<sub>10</sub>(N<sub>x</sub>) where N<sub>x</sub> 
+is abundance of element X relative to Hydrogen. The default abundances are from 
+'sun_coronal_1992_feldman_ext.abund' file in CHIANTI database.
 
 Details of chisoth model and the tabulated spectra used in the model is given in the
 appendix of [Mondal, Biswajit et al. 2021, ApJ.](https://doi.org/10.3847/1538-4357/ac14c1)
