@@ -14,7 +14,7 @@
 #include <fstream>
 #include <vector>
 #include <iomanip>
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
 #include "fitsio.h"
 #include <cstdio>
 
