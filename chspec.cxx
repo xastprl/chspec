@@ -102,7 +102,7 @@ void chisoth(const RealArray& energyArray, const RealArray& parms,
 
         for (LowerBound_ind = 0; LowerBound_ind < E_n;LowerBound_ind++)
         {
-            if (fabs(chfh.ene[LowerBound_ind] - energyArray[0]) < 1.0e-6)
+            if (fabs(chfh.ene[LowerBound_ind] - energyArray[0]) < 3.0e-6)
            {
             Ebound_error = 0;
             break;
@@ -120,8 +120,8 @@ void chisoth(const RealArray& energyArray, const RealArray& parms,
 
         // Rebin spectrum to required energy bins
 
-        //printf("Lower bound %d\n",LowerBound_ind);
-
+        //printf("Lower bound %d\t%lf\n",LowerBound_ind,chfh.ene[LowerBound_ind]);
+        
         enBinOffset=0;
         for (int i=0;i<chfh.nBinSpec;i++) enBinOffset+=chfh.nEbin[i];
 
@@ -231,7 +231,7 @@ void chgausdem(const RealArray& energyArray, const RealArray& parms,
  
         for (LowerBound_ind = 0; LowerBound_ind < E_n;LowerBound_ind++)
         {
-            if (fabs(chfh.ene[LowerBound_ind] - energyArray[0]) < 1.0e-6) 
+            if (fabs(chfh.ene[LowerBound_ind] - energyArray[0]) < 3.0e-6) 
  	       {   
  	   	    Ebound_error = 0;
  	   	    break;
