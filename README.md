@@ -71,4 +71,5 @@ xspec > model chisoth
 xspec > model chgausdem
 ```
 For an example of the use of `chisoth` model in PyXSPEC, see [this Jupyter
-notebook](https://github.com/xastprl/xsm-analysis/blob/master/notebooks/ch2xsm_spectralFit_isothermal_demo.ipynb).
+notebook](https://github.com/xastprl/xsm-analysis/blob/master/notebooks/ch2xsm_spectralFit_chspec_demo.ipynb).
+
